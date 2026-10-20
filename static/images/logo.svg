@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" width="220" height="40">
+  <rect width="36" height="36" y="2" rx="8" fill="#0f172a" />
+  <circle cx="18" cy="20" r="12" fill="none" stroke="#6ee7b7" stroke-width="2.5" stroke-dasharray="55 15" />
+  <path d="M13 25 L19 15 L23 20 L21 25" fill="none" stroke="#ff8000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="46" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" letter-spacing="1">
+    <tspan fill="#6ee7b7">SIGMA</tspan><tspan fill="#ff8000">PRO</tspan>
+  </text>
+</svg>

@@ -1,0 +1,66 @@
+/* SIGMAPRO Custom Backoffice Styles */
+:root {
+  --sigma-mint: #6ee7b7;
+  --sigma-mint-dark: #059669;
+  --sigma-orange: #ff8000;
+  --sigma-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--sigma-font) !important;
+}
+
+/* Sidebar branding accents */
+aside {
+  border-right: 1px solid rgba(110, 231, 183, 0.15) !important;
+}
+
+/* Brand logo styling */
+.sigmapro-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-size: 1.25rem;
+}
+
+.sigmapro-brand span.sig {
+  color: #6ee7b7;
+}
+
+.sigmapro-brand span.pro {
+  color: #ff8000;
+}
+
+/* Highlighting active navigation items */
+nav a[aria-current="page"],
+nav a.active {
+  border-left: 3px solid #6ee7b7 !important;
+  background: rgba(110, 231, 183, 0.08) !important;
+}
+
+/* Primary buttons with SIGMAPRO Mint Gradient */
+button[type="submit"],
+.bg-primary-600 {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+button[type="submit"]:hover,
+.bg-primary-600:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Table styling polish */
+table thead th {
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+}
