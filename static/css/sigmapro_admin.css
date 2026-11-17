@@ -1,66 +1,185 @@
-/* SIGMAPRO Custom Backoffice Styles */
+/* ==========================================================================
+   SIGMAPRO Modern Backoffice Styles
+   Paleta extraída fielmente del Frontend Angular de SIGMAPRO:
+   - Mint Primary: #6ee7b7 / #059669
+   - Orange Accent: #ff8000 / #e65100
+   - Dark Base: #0a0f1d, #0f172a, #1e293b
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 :root {
   --sigma-mint: #6ee7b7;
+  --sigma-mint-light: #d1fae5;
   --sigma-mint-dark: #059669;
   --sigma-orange: #ff8000;
-  --sigma-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sigma-orange-light: #fff3e0;
+  --sigma-orange-dark: #e65100;
+  --sigma-bg-dark: #0b1120;
+  --sigma-card-dark: #111827;
+  --sigma-border-dark: rgba(255, 255, 255, 0.08);
+  --sigma-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
   font-family: var(--sigma-font) !important;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Sidebar branding accents */
+/* Sidebar y navegación */
 aside {
-  border-right: 1px solid rgba(110, 231, 183, 0.15) !important;
+  background: #090e17 !important;
+  border-right: 1px solid rgba(110, 231, 183, 0.12) !important;
 }
 
-/* Brand logo styling */
-.sigmapro-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  font-size: 1.25rem;
+/* Encabezado del Backoffice */
+header {
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
-.sigmapro-brand span.sig {
-  color: #6ee7b7;
-}
-
-.sigmapro-brand span.pro {
-  color: #ff8000;
-}
-
-/* Highlighting active navigation items */
+/* Enlaces activos del menú lateral */
 nav a[aria-current="page"],
 nav a.active {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.03) 100%) !important;
   border-left: 3px solid #6ee7b7 !important;
-  background: rgba(110, 231, 183, 0.08) !important;
+  color: #6ee7b7 !important;
+  font-weight: 600 !important;
 }
 
-/* Primary buttons with SIGMAPRO Mint Gradient */
+/* Botones Primarios con Degradado SIGMAPRO */
 button[type="submit"],
-.bg-primary-600 {
+.bg-primary-600,
+.btn-primary {
   background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
-  border-color: #059669 !important;
+  border: 1px solid #10b981 !important;
   color: #ffffff !important;
   font-weight: 600 !important;
-  transition: all 0.2s ease-in-out !important;
+  border-radius: 0.625rem !important;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 button[type="submit"]:hover,
-.bg-primary-600:hover {
+.bg-primary-600:hover,
+.btn-primary:hover {
   background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.4) !important;
   transform: translateY(-1px);
 }
 
-/* Table styling polish */
+/* Botones de acción secundaria y acentos en naranja */
+.btn-warning,
+.badge-warning {
+  background-color: rgba(255, 128, 0, 0.15) !important;
+  color: #ff9800 !important;
+  border: 1px solid rgba(255, 128, 0, 0.3) !important;
+}
+
+/* Estilos de tablas modernas */
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
 table thead th {
+  background-color: rgba(15, 23, 42, 0.8) !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  font-size: 0.75rem !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.7rem !important;
   font-weight: 700 !important;
+  color: #94a3b8 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 0.85rem 1rem !important;
+}
+
+table tbody tr {
+  transition: background-color 0.15s ease-in-out;
+}
+
+table tbody tr:hover {
+  background-color: rgba(110, 231, 183, 0.04) !important;
+}
+
+table tbody td {
+  padding: 0.85rem 1rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Badges / Etiquetas de Estado */
+.bg-green-100.text-green-800,
+.bg-green-500\/10 {
+  background-color: rgba(110, 231, 183, 0.15) !important;
+  color: #6ee7b7 !important;
+  border: 1px solid rgba(110, 231, 183, 0.25) !important;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.bg-yellow-100.text-yellow-800,
+.bg-yellow-500\/10 {
+  background-color: rgba(255, 128, 0, 0.15) !important;
+  color: #fb923c !important;
+  border: 1px solid rgba(255, 128, 0, 0.25) !important;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.bg-red-100.text-red-800,
+.bg-red-500\/10 {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+/* Tarjetas y Contenedores */
+.bg-base-900,
+.dark\:bg-base-900 {
+  background-color: #0d1424 !important;
+}
+
+.border-base-800,
+.dark\:border-base-800 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Campos de Formulario */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+  outline: none !important;
+}
+
+/* Scrollbar moderno estilizado */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(110, 231, 183, 0.4);
 }

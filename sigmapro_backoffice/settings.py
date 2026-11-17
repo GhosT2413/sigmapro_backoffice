@@ -90,7 +90,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Mint: #6ee7b7 / #059669 | Orange: #ff8000 | Dark background & Modern UI
 UNFOLD = {
     "SITE_TITLE": "SIGMAPRO Backoffice",
-    "SITE_HEADER": "SIGMAPRO Administración Central",
+    "SITE_HEADER": "SIGMAPRO Control Central",
     "SITE_URL": "http://localhost:4200",
     "SITE_ICON": {
         "light": lambda request: "/static/images/logo-icon.svg",
@@ -101,6 +101,7 @@ UNFOLD = {
         "dark": lambda request: "/static/images/logo.svg",
     },
     "THEME": "dark",
+    "DASHBOARD_CALLBACK": "core.dashboard.dashboard_callback",
     "STYLES": [
         lambda request: "/static/css/sigmapro_admin.css",
     ],
@@ -124,6 +125,17 @@ UNFOLD = {
         "show_all_applications": False,
         "navigation": [
             {
+                "title": "Panel Principal",
+                "separator": False,
+                "items": [
+                    {
+                        "title": "Tablero y Métricas",
+                        "icon": "dashboard",
+                        "link": "/admin/",
+                    },
+                ],
+            },
+            {
                 "title": "Gestión de Usuarios",
                 "separator": True,
                 "items": [
@@ -138,14 +150,14 @@ UNFOLD = {
                         "link": "/admin/core/role/",
                     },
                     {
-                        "title": "Cuentas Backoffice (Staff)",
+                        "title": "Cuentas Staff Backoffice",
                         "icon": "shield_person",
                         "link": "/admin/auth/user/",
                     },
                 ],
             },
             {
-                "title": "Operación & Clientes",
+                "title": "Operación & Flota",
                 "separator": True,
                 "items": [
                     {

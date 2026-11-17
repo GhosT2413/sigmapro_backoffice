@@ -52,7 +52,6 @@ class Usuario(models.Model):
     rut = models.CharField(max_length=20, blank=True, null=True)
     activo = models.BooleanField(default=True)
     hasAcceptedTerms = models.BooleanField(default=False, db_column='hasAcceptedTerms')
-    fecha_nacimiento = models.DateField(blank=True, null=True)
     foto_perfil_url = models.TextField(blank=True, null=True)
     cedula_frente_url = models.TextField(blank=True, null=True)
     cedula_reverso_url = models.TextField(blank=True, null=True)
